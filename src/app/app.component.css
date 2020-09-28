@@ -1,0 +1,10 @@
+.app {
+  padding-top: 2rem;
+  background: linear-gradient(240deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    url(../assets/emp.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}

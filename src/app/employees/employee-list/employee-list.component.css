@@ -1,0 +1,21 @@
+td {
+    color: #a6beca;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+th {
+    color: #59b4dfdc;
+    font-weight: 800;
+}
+
+.custom-select{
+    width: auto;
+    
+}
+
+.custom-select:hover{
+    cursor: pointer;
+    background-color: #a6beca;
+    
+}

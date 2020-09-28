@@ -1,0 +1,13 @@
+.sticky-top {
+    top: 4%;
+   
+}
+h2{
+    display: flex;
+    justify-content: center;
+    color: #bfd3d6;
+}
+
+.btn-info{
+    border-radius: 1rem;
+}

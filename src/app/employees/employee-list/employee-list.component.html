@@ -1,0 +1,41 @@
+<input
+type="text"
+placeholder="Search by name..."
+class="form-control my-3"
+#query
+(keyup)="filter(query.value)"
+/>
+<table class="table table-striped">
+   <thead>
+       <th></th>
+       <th>Name</th>
+       <th>Position</th>
+       <th>Mobile</th>
+       <th>Code</th>
+       <th></th>
+   </thead>
+   <tbody>
+       <tr *ngFor="let emp of filteredList, index as i">
+   
+        <th  >{{ i + 1 }}</th>
+           <td title="click to edit"  style="cursor: pointer;" (click)="onEdit(emp)">{{emp.fullName}}</td>
+           <td title="click to edit" style="cursor: pointer;" (click)="onEdit(emp)">{{emp.position}}</td>
+           <td title="click to edit" style="cursor: pointer;" (click)="onEdit(emp)">{{emp.mobile}}</td>
+           <td title="click to edit" style="cursor: pointer;" (click)="onEdit(emp)"> {{emp.empCode}}  </td>
+           <td><a class="btn text-danger" (click)="onDelete(emp.id)"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+          </svg></a></td>
+       </tr>
+   </tbody>
+</table>
+<hr>
+<div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshEmployees()">
+    </ngb-pagination>
+  
+    <select class="custom-select"  [(ngModel)]="pageSize" (ngModelChange)="refreshEmployees()">
+      <option [ngValue]="2">show only 2 items</option>
+      <option [ngValue]="4">show only 4 items</option>
+      <option [ngValue]="6">show only 6 items</option>
+    </select>
+  </div>
